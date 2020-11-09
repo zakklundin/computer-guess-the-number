@@ -5,13 +5,15 @@ let guess
 
 document.getElementById('too-high-btn').addEventListener('click', function () {
     // Vad ska hända när man tryckt too high?
-    guess--
+    //guess--
+    guess = Math.floor(Math.random() * 100)
     setMessage(`Is it ${guess}?`)
 })
 
 document.getElementById('too-low-btn').addEventListener('click', function () {
     // Vad ska hända när man tryckt too low?
-    guess++
+    //guess++
+    guess = Math.floor(Math.random() * 100)
     setMessage(`Is it ${guess}?`)
 })
 
@@ -27,7 +29,7 @@ function start() {
     document.getElementById('before-start').style.display = 'none'
     document.querySelector('main').style.display = 'block'
 
-    guess = 50
+    guess = Math.floor(Math.random() * 100)
 
     setMessage(`Is it ${guess}?`)
 }
