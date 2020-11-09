@@ -5,7 +5,7 @@ let guess
 
 document.getElementById('too-high-btn').addEventListener('click', function () {
     // Vad ska hända när man tryckt too high?
-
+    
 })
 
 document.getElementById('too-low-btn').addEventListener('click', function () {
@@ -13,6 +13,9 @@ document.getElementById('too-low-btn').addEventListener('click', function () {
     
 })
 
+document.getElementById('is-correct-btn').addEventListener('click',function() {
+    setMessage("Woho! :)")
+})
 
 function setMessage(msg) {
     document.getElementById('message').innerText = msg
@@ -24,8 +27,9 @@ function start() {
 
     guess = 0
 
-    // setMessage(`Is it ${guess}?`)
+    setMessage(`Is it ${guess}?`)
 }
+
 
 document
     .getElementById('start-btn')
