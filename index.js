@@ -27,7 +27,7 @@ document.getElementById('too-low-btn').addEventListener('click', function () {
 })
 
 document.getElementById('is-correct-btn').addEventListener('click', function () {
-    setMessage("Woho! :)")
+    setMessage(`Correct! It was ${guess}! :)`)
 })
 
 function setMessage(msg) {
@@ -39,12 +39,23 @@ function start() {
     document.querySelector('main').style.display = 'block'
     guess = 50
     setMessage(`Is it ${guess}?`)
+}
+
+function botStart(){
+    document.getElementById('before-start').style.display = 'none'
+    document.querySelector('main').style.display = 'block'
+    guess = 50
+    setMessage(`Is it ${guess}?`)
     startBot()
 }
 
 document
     .getElementById('start-btn')
     .addEventListener('click', start)
+
+document
+    .getElementById('bot-start')
+    .addEventListener('click', botStart)
 
 //fördjupning
 document.getElementById("counter").innerText = "Guesses: " + antalGissningar
@@ -60,5 +71,5 @@ function startBot() {
         } if (secretGuess < guess) {
             document.getElementById('too-high-btn').click() 
         }
-    }, 1000)
+    }, 800)
 }
