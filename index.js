@@ -4,9 +4,12 @@ let smolGuess = MIN_NUMBER
 let bigGuess = MAX_NUMBER
 
 let guess
+let antalGissningar = 0
 
 document.getElementById('too-high-btn').addEventListener('click', function () {
     // Vad ska hända när man tryckt too high?
+    antalGissningar++
+    document.getElementById("counter").innerText = "Guesses: " + antalGissningar
     bigGuess = guess
     guess = Math.floor((bigGuess + smolGuess)/2)
     setMessage(`Is it ${guess}?`)
@@ -14,6 +17,8 @@ document.getElementById('too-high-btn').addEventListener('click', function () {
 
 document.getElementById('too-low-btn').addEventListener('click', function () {
     // Vad ska hända när man tryckt too low?
+    antalGissningar++
+    document.getElementById("counter").innerText = "Guesses: " + antalGissningar
     smolGuess = guess
     guess = Math.floor((bigGuess + smolGuess)/2)
     setMessage(`Is it ${guess}?`)
@@ -36,6 +41,7 @@ function start() {
     setMessage(`Is it ${guess}?`)
 }
 
+document.getElementById("counter").innerText = "Guesses: " + antalGissningar
 
 document
     .getElementById('start-btn')
